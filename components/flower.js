@@ -5,7 +5,6 @@ export default function Flower({ common_name, blooming_season, id, cover_image }
         <article>
             <h2>{ common_name }</h2>
             <p>{ blooming_season }</p>
-            <img src={cover_image} alt={cover_image} />
             <Link href="/flower/[id]" as={`flower/${id}`}>
             <a>Read more...</a>
             </Link>
@@ -13,3 +12,4 @@ export default function Flower({ common_name, blooming_season, id, cover_image }
     )
 }
 
+//  <img src={cover_image} alt={cover_image} />
