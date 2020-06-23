@@ -32,7 +32,7 @@ export default function Flower({flowerDetail}) {
             </Head>
 
             <p>{ flowerDetail.common_name }</p>
-            <p>{ flowerDetail.blooming_season }</p>
+            <img src={flowerDetail.cover_image} alt={flowerDetail.cover_image} />
             <p>{ flowerDetail.comment}</p>
            
 
