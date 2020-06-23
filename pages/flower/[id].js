@@ -2,47 +2,44 @@ import Link from 'next/link';
 import Head from 'next/head';
 // import Layout
 
-export async function getStaticPaths() {
-    
-    const response = await fetch('https://flowers-mock-data.firebaseio.com/flowers.json'
-    )  
-    const allFlowerData = await response.json()
-    return {
-        paths: allFlowerData.map((flower) => {
-            return {
-                params: {
-                    id: `${flower.flowerId}`,
-                },
-            }
-        }),
-        fallback: false,
-    }
-}
 
-export async function getStaticProps( { params }) {
+export async function getServerSideProps({params}) {
     // fetch flower details.
-    const response = await fetch('https://flowers-mock-data.firebaseio.com/flowers/{flowerId}.json'
-    )
-    const flower = await response
+    console.log(params.id)
+    const response = await fetch(`https://flowers-mock-data.firebaseio.com/flowers/${params.id}.json`)
+    const flowerDetail = await response.json()
+
+    //fetch comment list 
+    const commentsResponse = await fetch(`https://flowers-mock-data.firebaseio.com/comments/${params.id}.json`)
+    const comments = await commentsResponse.json()
+    console.log('HEJ', comments);
+    flowerDetail.comment = comments;
+    console.log(flowerDetail);
     return {
-        props: params
+        props: { flowerDetail } 
     }
 }
 
-//getAllflowersDetails()
+//Render flower details
 
-export default function Flower({ common_name, blooming_season  }) {
-        return (
-            <main>
-                <Head>
-                    <title>{ common_name }</title>
-                </Head>
-                    <p>{ blooming_season }</p>
+export default function Flower({flowerDetail}) {
+    console.log("flowerDetaiol", flowerDetail)
 
-                    <Link href='/'>
-                        <a>Go back to home</a>
-                    </Link>
-            </main>
+    return (
+        <main>
+            <Head>
+                <title>{ flowerDetail.common_name }</title>
+            </Head>
 
-        )
-}
+            <p>{ flowerDetail.common_name }</p>
+            <p>{ flowerDetail.blooming_season }</p>
+            <p>{ flowerDetail.comment}</p>
+           
+
+            <Link href='/'>
+                <a>Go back to home</a>
+            </Link>
+        </main>
+
+    )
+};
