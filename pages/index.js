@@ -21,9 +21,11 @@ export default function Home( { allFlowerData}) {
         <title>Home page</title>
       </Head>
 
+      <div className="top">
       <h1>List of flowers</h1>
+      </div>
 
-      <section>
+      <section className="flower-container">
         {allFlowerData.map((flower, index) => (
             <Flower {...flower} id={index} key={index} />
         ))}

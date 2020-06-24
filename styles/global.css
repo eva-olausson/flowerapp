@@ -1,0 +1,53 @@
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.flower-container {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: pink;
+  
+}
+
+.articles {
+    width: 500px;
+    padding-right: 1rem;
+}
+
+.flower-card {
+    background-color: lightgray;
+    width: 1000px;
+}
+
+img {
+    max-width: 100%;
+}
+
+.top {
+    background-color: grey;
+    height: 6rem;
+
+}
+
+.comment-form {
+    display: flex;
+    flex-direction: column;
+    background-color: lightsalmon;   
+    height: 6rem;
+}
+
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.comments {
+    background-color: lightgreen;
+}
+
+/* fonter */
+

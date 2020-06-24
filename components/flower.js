@@ -1,15 +1,13 @@
 import Link from 'next/link';
 
-export default function Flower({ common_name, blooming_season, id, cover_image }) {
+export default function Flower({ common_name, id, cover_image }) {
     return (
-        <article>
+        <article class="articles">
             <h2>{ common_name }</h2>
-            <p>{ blooming_season }</p>
+            <img src={cover_image} alt={cover_image} />
             <Link href="/flower/[id]" as={`flower/${id}`}>
-            <a>Read more...</a>
+            <h3><a>Read more</a></h3>
             </Link>
         </article>
     )
 }
-
-//  <img src={cover_image} alt={cover_image} />
