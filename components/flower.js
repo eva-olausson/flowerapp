@@ -9,7 +9,9 @@ export default function Flower({ common_name, id, cover_image }) {
             <Image height="120" src={cover_image} alt={cover_image} size='large' href={`/flower/${id}`} as="a" />
             <Link href="/flower/[id]" as={`flower/${id}`}>
             <h3><a>Read more</a></h3>
-            </Link>
+            </Link>            
+            <div className="ui hidden divider"></div>
+
         </article>
     )
 }

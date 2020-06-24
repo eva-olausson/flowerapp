@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Head from 'next/head';
-import { Form, Divider } from 'semantic-ui-react';
+import { Form, Divider, Image } from 'semantic-ui-react';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 
@@ -63,12 +63,11 @@ export default function Flower({ flowerDetail }) {
             </Head>
 
             <div className="flower-card">
-
-                <img src={flowerDetail.cover_image} alt={flowerDetail.cover_image} />
-                <div className="ui hidden divider"></div>
+            <Image height="120" src={flowerDetail.cover_image} alt={flowerDetail.cover_image} size="massive" />
                 
+                <div className="ui hidden divider"></div>
                 <div className="flower-details">
-                    <h1 className="ui header">{flowerDetail.common_name}</h1>
+                    <h1>{flowerDetail.common_name}</h1>
                     <div className="ui hidden divider"></div>
                     <h3>Soil: {flowerDetail.soil}</h3>
                     <h3>Latin name: {flowerDetail.latin_name}</h3>
@@ -86,14 +85,19 @@ export default function Flower({ flowerDetail }) {
                                 placeholder='Name'
                                 name="name"
                                 value={name}
-                                onChange={e => setName(e.target.value)}  />
+                                onChange={e => setName(e.target.value)}
+                                size="large"
+                                  />
                         </Form.Group>
                         <Form.TextArea
                             placeholder='Comment'
                             name='comment'
                             value={comment}
-                            onChange={e => setComment(e.target.value)} />
-                            <Form.Button content='Submit' color="black" />
+                            onChange={e => setComment(e.target.value)}
+                            size="large" 
+                            
+                            />
+                            <Form.Button content='Submit' color="black" size="big" />
                     </Form>
 
                 </div>
@@ -111,10 +115,11 @@ export default function Flower({ flowerDetail }) {
                 </div>
 
             <Link href='/'>
-                <a color="black">Go back to home</a>
+                <a>Go back to home</a>
             </Link>
-            </div>
+            <div className="ui hidden divider"></div>
 
+            </div>
         </main>
 
     )

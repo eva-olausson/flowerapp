@@ -10,7 +10,7 @@ html {
     font-family: 'Poppins', sans-serif;
 }
 
-h1 {
+.top > h1 {
     color: white;
     font-size: 50px;
 }
@@ -28,13 +28,18 @@ h1 {
 }
 
 .flower-card {
-    width: 1000px;
     margin: auto;
+    max-width: 1200px;
+}
+
+.flower-card h1 {
+   font-size: 50px;
 }
 
 img {
     max-width: 100%;
 }
+
 
 .top {
     height: 10rem;
@@ -45,8 +50,14 @@ img {
 }
 
 .top:first-child {
-    padding-top: 2rem;
+    padding-top: 3rem;
 }
+
+/* flower details */
+
+.flower-details > h1 {
+    font-size: 40px;
+    }
 
 .comment-form {
     display: flex;
@@ -55,14 +66,9 @@ img {
 }
 
 .comments {
-    width: 500px;
     padding: 3rem 0;
     font-size: 20px;
     
-}
-
-li {
-    text-decoration: none;
 }
 
 a {
@@ -75,12 +81,13 @@ a:hover {
 
 } 
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 780px) {
 
     .flower-container {
         display: flex;
         flex-direction: row;
         justify-content: center;
+        text-align: center;
       
     }
 
@@ -88,18 +95,21 @@ a:hover {
         width: 400px;        
     }
 
-    .ui-header {
+    header {
         font-size: 40px;
-    }
 
+    }
 
     .flower-details {
-    display: flex;
-    flex-wrap: column;
+        text-align: center;
     }
 
-    .flower-details :first-child {
-    font-size: x-small;
+    .flower-details > h1 {
+    font-size: 40px;
+    }
+
+    .flower-card > h2 {
+        text-align: center;
     }
 
     .comment-form {
@@ -110,19 +120,9 @@ a:hover {
 
     .comments {
     text-align: center;
-    width: 500px;
-}
-  }
-
-  @media screen and (min-width: 768px) {
-
-    .flower-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      
-    }
+   
 }
 
-/* fonter */
+}
+
 
