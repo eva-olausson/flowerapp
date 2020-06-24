@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import Flower from '../components/flower';
-// I flower-component alla flower items som importeras 
 
 export async function getServerSideProps() {
   //fetch all flowers
@@ -12,6 +11,7 @@ export async function getServerSideProps() {
       allFlowerData,
     },
   }  
+  
 }
 
 export default function Home( { allFlowerData}) {
@@ -20,9 +20,9 @@ export default function Home( { allFlowerData}) {
       <Head>
         <title>Home page</title>
       </Head>
-
+      
       <div className="top">
-      <h1>List of flowers</h1>
+      <h1>All about flowers</h1>
       </div>
 
       <section className="flower-container">
