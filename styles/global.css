@@ -8,7 +8,6 @@
 .flower-container {
     display: flex;
     flex-wrap: wrap;
-    background-color: pink;
   
 }
 
@@ -18,7 +17,6 @@
 }
 
 .flower-card {
-    background-color: lightgray;
     width: 1000px;
 }
 
@@ -27,15 +25,13 @@ img {
 }
 
 .top {
-    background-color: grey;
     height: 6rem;
 
 }
 
 .comment-form {
     display: flex;
-    flex-direction: column;
-    background-color: lightsalmon;   
+    flex-direction: column;  
     height: 6rem;
 }
 
@@ -45,9 +41,6 @@ img {
     flex-direction: column;
 }
 
-.comments {
-    background-color: lightgreen;
-}
 
 /* fonter */
 
