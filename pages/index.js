@@ -2,7 +2,9 @@ import Head from 'next/head';
 import Flower from '../components/flower';
 
 export async function getServerSideProps() {
+
   //fetch all flowers
+  
   const response = await fetch('https://flowers-mock-data.firebaseio.com/flowers.json')
   const allFlowerData = await response.json()
 

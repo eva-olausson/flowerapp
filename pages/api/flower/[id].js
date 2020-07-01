@@ -1,6 +1,5 @@
 
 export default async (req, res) => {
-  console.log(req)
   const {id} = req.query;
   const {comment, name} = req.body;
 
@@ -8,8 +7,6 @@ export default async (req, res) => {
     name: name,
     comment: comment
   }
-
-  console.log(comment, name, id)
 
   // Pga att det inte går att skicka från client till annan server. 
 
@@ -21,8 +18,6 @@ export default async (req, res) => {
       },
       body: JSON.stringify(payload)
   });
-
-  console.log("Firebase response", response.statusText)
 
   res.status(200).end();
 }

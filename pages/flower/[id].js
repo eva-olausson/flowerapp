@@ -7,8 +7,8 @@ import { useState } from 'react';
 // import Layout
 
 export async function getServerSideProps({ params }) {
+
     // fetch flower details.
-    console.log(params.id)
     const response = await fetch(`https://flowers-mock-data.firebaseio.com/flowers/${params.id}.json`)
     const flowerDetail = await response.json()
 
@@ -16,20 +16,18 @@ export async function getServerSideProps({ params }) {
     const commentsResponse = await fetch(`https://flowers-mock-data.firebaseio.com/comments/eva-olausson/${params.id}.json`)
     const comments = await commentsResponse.json()
     flowerDetail.comments = comments;
-    console.log(flowerDetail);
+
     return {
         props: { flowerDetail }
     }
 }
 
 export default function Flower({ flowerDetail }) {
-    console.log("flowerDetaiol", flowerDetail)
 
     //get current path to know which flower to send the comment to.
 
     const router = useRouter()
     const { id } = router.query
-    console.log(id)
 
     const [comment, setComment] = useState('');
     const [name, setName] = useState('');
@@ -41,7 +39,6 @@ export default function Flower({ flowerDetail }) {
             comment: comment,
             name: name
         };
-        console.log(payload);
 
         // Send post request to my api route
 
